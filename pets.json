@@ -1,6 +1,4 @@
 [
   { "age": 7, "kind": "rainbow", "name": "fido" },
-  { "age": 5, "kind": "snake", "name": "Buttons" },
-  { "name": "Cornflake", "age": 3, "kind": "parakeet" },
-  { "age": 10, "kind": "cannibal", "name": "yum" }
+  { "age": 5, "kind": "snake", "name": "Buttons" }
 ]

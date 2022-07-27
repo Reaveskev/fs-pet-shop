@@ -2,8 +2,9 @@ import express from "express";
 import fs from "fs/promises";
 
 const app = express();
-const PORT = 3000;
 
+const PORT = 3000;
+//localhost:3000/pets
 const readPetsFile = () =>
   readFile("pets.json", "utf-8").then((str) => {
     return JSON.parse(str);
@@ -45,7 +46,7 @@ app.post("/pets", (req, res) => {
   const body = req.body;
   fs.readFile("pets.json", "utf-8").then((str) => {
     const exsistingPets = JSON.parse(str);
-    if (typeof body.age === "Number" && body.kind && body.name) {
+    if (typeof body.age === "number" && body.kind && body.name) {
       exsistingPets.push(body);
       fs.writeFile("pets.json", JSON.stringify(exsistingPets));
       res.status(200);
@@ -62,3 +63,10 @@ app.post("/pets", (req, res) => {
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });
+
+//app.put("/products/:id", (req, res) => {
+//  const id = req.params.id;
+// })
+//app.delete("/products/:id", (req, res) => {
+//  const id = req.params.id;
+// })
